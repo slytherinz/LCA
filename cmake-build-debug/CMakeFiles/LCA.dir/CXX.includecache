@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../array/include/array.h
+vector
+-
+
+/Users/cloudlz/Codes/LCA/array/src/array.cpp
+array.h
+/Users/cloudlz/Codes/LCA/array/src/array.h
+map
+-
+
+/Users/cloudlz/Codes/LCA/main.cpp
+iostream
+-
+vector
+-
+array.h
+/Users/cloudlz/Codes/LCA/array.h
+

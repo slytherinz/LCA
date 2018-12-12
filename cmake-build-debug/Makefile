@@ -123,6 +123,33 @@ LCA/fast:
 	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/build
 .PHONY : LCA/fast
 
+array/src/array.o: array/src/array.cpp.o
+
+.PHONY : array/src/array.o
+
+# target to build an object file
+array/src/array.cpp.o:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cpp.o
+.PHONY : array/src/array.cpp.o
+
+array/src/array.i: array/src/array.cpp.i
+
+.PHONY : array/src/array.i
+
+# target to preprocess a source file
+array/src/array.cpp.i:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cpp.i
+.PHONY : array/src/array.cpp.i
+
+array/src/array.s: array/src/array.cpp.s
+
+.PHONY : array/src/array.s
+
+# target to generate assembly for a file
+array/src/array.cpp.s:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cpp.s
+.PHONY : array/src/array.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... LCA"
+	@echo "... array/src/array.o"
+	@echo "... array/src/array.i"
+	@echo "... array/src/array.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
