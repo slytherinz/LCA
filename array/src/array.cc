@@ -51,4 +51,7 @@ int Array::minIncrementForUniqueOptimize(vector<int> &A) {
     }
     return count;
 }
+vector<int> Array::deckRevealedIncreasing(vector<int> &deck) {
+    
+}
 

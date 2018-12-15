@@ -85,7 +85,7 @@
 		<Unit filename="/Users/cloudlz/Codes/LCA/array/include/array.h">
 			<Option target="LCA"/>
 		</Unit>
-		<Unit filename="/Users/cloudlz/Codes/LCA/array/src/array.cpp">
+		<Unit filename="/Users/cloudlz/Codes/LCA/array/src/array.cc">
 			<Option target="LCA"/>
 		</Unit>
 		<Unit filename="/Users/cloudlz/Codes/LCA/main.cpp">

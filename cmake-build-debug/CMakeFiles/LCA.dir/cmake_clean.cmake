@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LCA.dir/main.cpp.o"
-  "CMakeFiles/LCA.dir/array/src/array.cpp.o"
+  "CMakeFiles/LCA.dir/array/src/array.cc.o"
   "LCA.pdb"
   "LCA"
 )

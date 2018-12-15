@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/cloudlz/Codes/LCA/array/src/array.cpp" "/Users/cloudlz/Codes/LCA/cmake-build-debug/CMakeFiles/LCA.dir/array/src/array.cpp.o"
+  "/Users/cloudlz/Codes/LCA/array/src/array.cc" "/Users/cloudlz/Codes/LCA/cmake-build-debug/CMakeFiles/LCA.dir/array/src/array.cc.o"
   "/Users/cloudlz/Codes/LCA/main.cpp" "/Users/cloudlz/Codes/LCA/cmake-build-debug/CMakeFiles/LCA.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

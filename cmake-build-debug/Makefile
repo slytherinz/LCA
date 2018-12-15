@@ -123,32 +123,32 @@ LCA/fast:
 	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/build
 .PHONY : LCA/fast
 
-array/src/array.o: array/src/array.cpp.o
+array/src/array.o: array/src/array.cc.o
 
 .PHONY : array/src/array.o
 
 # target to build an object file
-array/src/array.cpp.o:
-	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cpp.o
-.PHONY : array/src/array.cpp.o
+array/src/array.cc.o:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cc.o
+.PHONY : array/src/array.cc.o
 
-array/src/array.i: array/src/array.cpp.i
+array/src/array.i: array/src/array.cc.i
 
 .PHONY : array/src/array.i
 
 # target to preprocess a source file
-array/src/array.cpp.i:
-	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cpp.i
-.PHONY : array/src/array.cpp.i
+array/src/array.cc.i:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cc.i
+.PHONY : array/src/array.cc.i
 
-array/src/array.s: array/src/array.cpp.s
+array/src/array.s: array/src/array.cc.s
 
 .PHONY : array/src/array.s
 
 # target to generate assembly for a file
-array/src/array.cpp.s:
-	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cpp.s
-.PHONY : array/src/array.cpp.s
+array/src/array.cc.s:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cc.s
+.PHONY : array/src/array.cc.s
 
 main.o: main.cpp.o
 

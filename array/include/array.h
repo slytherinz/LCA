@@ -12,5 +12,7 @@ public:
     //使数组唯一的最小增量
     static int minIncrementForUnique(vector<int>& A);
     static int minIncrementForUniqueOptimize(vector<int>& A);
+    //
+    static vector<int> deckRevealedIncreasing(vector<int>& deck);
 };
 #endif //LCA_ARRAY_H
