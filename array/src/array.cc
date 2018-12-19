@@ -52,6 +52,22 @@ int Array::minIncrementForUniqueOptimize(vector<int> &A) {
     return count;
 }
 vector<int> Array::deckRevealedIncreasing(vector<int> &deck) {
+    vector<int> res;
+    //先排序
+    sort(deck.begin(),deck.end());
+    //deck最后一个元素放到res第一个；res最后一个放到res第一个，循环
+    for (int i= deck.size()-1; i>0; i--) {
+        res.insert(res.begin(), deck[i]);
+        if(res.size()>1) {
+            res.insert(res.begin(),res[res.size()-1]);
+            res.pop_back();
+        }
+    }
+    res.insert(res.begin(), deck[0]);
+    return res;
+}
+
+bool Array::canReorderDoubled(vector<int> &A) {
     
 }
 
