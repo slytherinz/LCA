@@ -68,6 +68,29 @@ vector<int> Array::deckRevealedIncreasing(vector<int> &deck) {
 }
 
 bool Array::canReorderDoubled(vector<int> &A) {
-    
+    bool res = false;
+    if (A.size() == 0 || A.empty()) {
+        return true;
+    }
+    //需要有两倍关系的对数，可能有重叠的关系,跟放的位置有关系
+    int num = A.size()/2;
+    int count = 0;
+    for (int i=0;i<A.size();i++) {
+        if (A[i] <= INT_MAX/2) {
+            //找到两倍的元素，把这两个元素置为最大
+            vector<int>::iterator iter = find(A.begin(),A.end(),2*A[i]);
+            //不能是同个位置的元素，考虑0的情况
+            if (iter != A.end() && distance(A.begin(),iter) != i) {
+                count++;
+                A[i] = INT_MAX;
+                *iter = INT_MAX;
+                if (count == num) {
+                    res = true;
+                    return res;
+                }
+            }
+        }
+    }
+    return res;
 }
 
