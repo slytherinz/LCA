@@ -7,6 +7,8 @@
 
 #include <cstdlib>
 #include <vector>
+#include <iostream>
+
 /**
  * Definition for singly-linked list.
  */
@@ -24,13 +26,21 @@ public:
         node->next = p->next;
         p->next = node;
     }
-    static void insertNode(ListNode *p, std::vector<int> insertList){
+    static ListNode* insertNode(ListNode *head, std::vector<int> insertList){
+        ListNode* p = head;
         std::vector<int>::iterator iter;
         for(iter = insertList.begin(); iter < insertList.end(); iter++) {
             ListNode* node = new ListNode(*iter);
             node->next = p->next;
             p->next = node;
+            p = p->next;
         }
+        p = head;
+        while (p != NULL) {
+            std::cout << p->val << std::endl;
+            p = p->next;
+        }
+        return head;
     }
 };
 

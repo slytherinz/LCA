@@ -4,21 +4,49 @@
 #include "listTypes.h"
 
 ListNode* ListTypes::addTwoNumbers(ListNode* l1, ListNode* l2) {
-    ListNode* sum;
+    ListNode* sum = new ListNode(0);
+    ListNode* head = sum;
     int carry = 0;
-    while(l1->next != NULL && l2->next != NULL) {
+    while(l1 != NULL && l2 != NULL) {
         int addVal = l1->val + l2->val + carry;
-        if (addVal > 10) {
+        if (addVal >= 10) {
             carry = 1;
+        } else {
+            carry = 0;
         }
         insertNode(sum, addVal % 10);
-        l1->next = l1;
-        l2->next = l2;
+        l1 = l1->next;
+        l2 = l2->next;
+        sum = sum->next;
     }
-    if(l1->next != NULL) {
-        sum->next = l1->next;
-    } else if (l2->next != NULL) {
-        sum->next = l2->next;
+    //l1不为空
+    if(l1 != NULL) {
+        while(l1 != NULL) {
+            int addVal = l1->val + carry;
+            if (addVal >= 10) {
+                carry = 1;
+            } else {
+                carry = 0;
+            }
+            insertNode(sum, addVal % 10);
+            l1 = l1->next;
+            sum = sum->next;
+        }
+    } else if (l2 != NULL) {
+        while(l2 != NULL) {
+            int addVal = l2->val + carry;
+            if (addVal >= 10) {
+                carry = 1;
+            } else {
+                carry = 0;
+            }
+            insertNode(sum, addVal % 10);
+            l2 = l2->next;
+            sum = sum->next;
+        }
     }
-    return sum;
+    if (carry == 1) {
+        insertNode(sum, carry);
+    }
+    return head->next;
 }
