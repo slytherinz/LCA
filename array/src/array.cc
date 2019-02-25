@@ -94,3 +94,31 @@ bool Array::canReorderDoubled(vector<int> &A) {
     return res;
 }
 
+double Array::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+    double ans;
+    vector<int> merge;
+    int pos = 0;
+    for (int i = 0; i < nums2.size(); i++) {
+        while(pos < nums1.size()) {
+            if (nums1[pos] <= nums2[i]) {
+                merge.push_back(nums1[pos]);
+                pos++;
+            } else break;
+        }
+        merge.push_back(nums2[i]);
+    }
+    while (pos < nums1.size()) {
+        merge.push_back(nums1[pos]);
+        pos++;
+    }
+    if (merge.size()%2 == 0) {
+        ans = ((double)merge[merge.size()/2-1])/2 + ((double)merge[merge.size()/2])/2;
+    } else {
+        ans = (double)merge[merge.size()/2];
+    }
+    return ans;
+}
+
+double Array::findMedianSortedArraysBest(vector<int>& nums1, vector<int>& nums2) {
+    
+}
