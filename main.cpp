@@ -3,7 +3,8 @@
 #include <string>
 #include <numeric>
 #include "array.h"
-#include "listTypes.h"
+#include "list_types.h"
+#include "string_type.h"
 using namespace std;
 
 int main() {
@@ -15,5 +16,7 @@ int main() {
     int b[arrSizeA] = {2};
     vector<int> bvector(b,b+arrSizeB);
     cout << Array::findMedianSortedArrays(avector, bvector) << endl;
+    string sr = "ac";
+    cout << StringType::longestPalindrome(sr) << endl;
     return 0;
 }

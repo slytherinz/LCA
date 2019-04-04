@@ -6,13 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../array/include/array.h
-vector
+../array/include/string_type.h
+string
 -
 
-/Users/cloudlz/Codes/LCA/array/src/array.cc
-array.h
-/Users/cloudlz/Codes/LCA/array/src/array.h
-map
--
+/Users/cloudlz/Codes/LCA/array/src/string_type.cc
+string_type.h
+/Users/cloudlz/Codes/LCA/array/src/string_type.h
 

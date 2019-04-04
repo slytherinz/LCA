@@ -150,6 +150,60 @@ array/src/array.cc.s:
 	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/array.cc.s
 .PHONY : array/src/array.cc.s
 
+array/src/list_types.o: array/src/list_types.cc.o
+
+.PHONY : array/src/list_types.o
+
+# target to build an object file
+array/src/list_types.cc.o:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/list_types.cc.o
+.PHONY : array/src/list_types.cc.o
+
+array/src/list_types.i: array/src/list_types.cc.i
+
+.PHONY : array/src/list_types.i
+
+# target to preprocess a source file
+array/src/list_types.cc.i:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/list_types.cc.i
+.PHONY : array/src/list_types.cc.i
+
+array/src/list_types.s: array/src/list_types.cc.s
+
+.PHONY : array/src/list_types.s
+
+# target to generate assembly for a file
+array/src/list_types.cc.s:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/list_types.cc.s
+.PHONY : array/src/list_types.cc.s
+
+array/src/string_type.o: array/src/string_type.cc.o
+
+.PHONY : array/src/string_type.o
+
+# target to build an object file
+array/src/string_type.cc.o:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/string_type.cc.o
+.PHONY : array/src/string_type.cc.o
+
+array/src/string_type.i: array/src/string_type.cc.i
+
+.PHONY : array/src/string_type.i
+
+# target to preprocess a source file
+array/src/string_type.cc.i:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/string_type.cc.i
+.PHONY : array/src/string_type.cc.i
+
+array/src/string_type.s: array/src/string_type.cc.s
+
+.PHONY : array/src/string_type.s
+
+# target to generate assembly for a file
+array/src/string_type.cc.s:
+	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/array/src/string_type.cc.s
+.PHONY : array/src/string_type.cc.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +243,12 @@ help:
 	@echo "... array/src/array.o"
 	@echo "... array/src/array.i"
 	@echo "... array/src/array.s"
+	@echo "... array/src/list_types.o"
+	@echo "... array/src/list_types.i"
+	@echo "... array/src/list_types.s"
+	@echo "... array/src/string_type.o"
+	@echo "... array/src/string_type.i"
+	@echo "... array/src/string_type.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

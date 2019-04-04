@@ -85,7 +85,19 @@
 		<Unit filename="/Users/cloudlz/Codes/LCA/array/include/array.h">
 			<Option target="LCA"/>
 		</Unit>
+		<Unit filename="/Users/cloudlz/Codes/LCA/array/include/list_types.h">
+			<Option target="LCA"/>
+		</Unit>
+		<Unit filename="/Users/cloudlz/Codes/LCA/array/include/string_type.h">
+			<Option target="LCA"/>
+		</Unit>
 		<Unit filename="/Users/cloudlz/Codes/LCA/array/src/array.cc">
+			<Option target="LCA"/>
+		</Unit>
+		<Unit filename="/Users/cloudlz/Codes/LCA/array/src/list_types.cc">
+			<Option target="LCA"/>
+		</Unit>
+		<Unit filename="/Users/cloudlz/Codes/LCA/array/src/string_type.cc">
 			<Option target="LCA"/>
 		</Unit>
 		<Unit filename="/Users/cloudlz/Codes/LCA/main.cpp">

@@ -4,6 +4,14 @@
 CMakeFiles/LCA.dir/array/src/array.cc.o: ../array/include/array.h
 CMakeFiles/LCA.dir/array/src/array.cc.o: ../array/src/array.cc
 
+CMakeFiles/LCA.dir/array/src/list_types.cc.o: ../array/include/list_types.h
+CMakeFiles/LCA.dir/array/src/list_types.cc.o: ../array/src/list_types.cc
+
+CMakeFiles/LCA.dir/array/src/string_type.cc.o: ../array/include/string_type.h
+CMakeFiles/LCA.dir/array/src/string_type.cc.o: ../array/src/string_type.cc
+
 CMakeFiles/LCA.dir/main.cpp.o: ../array/include/array.h
+CMakeFiles/LCA.dir/main.cpp.o: ../array/include/list_types.h
+CMakeFiles/LCA.dir/main.cpp.o: ../array/include/string_type.h
 CMakeFiles/LCA.dir/main.cpp.o: ../main.cpp
 

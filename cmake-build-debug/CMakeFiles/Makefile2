@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /Users/cloudlz/Codes/LCA/cmake-build-debug
 CMakeFiles/LCA.dir/all:
 	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/depend
 	$(MAKE) -f CMakeFiles/LCA.dir/build.make CMakeFiles/LCA.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/cloudlz/Codes/LCA/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target LCA"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/cloudlz/Codes/LCA/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target LCA"
 .PHONY : CMakeFiles/LCA.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/LCA.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/LCA.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cloudlz/Codes/LCA/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cloudlz/Codes/LCA/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/LCA.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cloudlz/Codes/LCA/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/LCA.dir/rule

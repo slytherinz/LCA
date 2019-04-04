@@ -16,7 +16,7 @@ public:
     static vector<int> deckRevealedIncreasing(vector<int>& deck);
     //954. 二倍数对数组
     static bool canReorderDoubled(vector<int>& A);
-    //4. 寻找两个有序数组的中位数,时间复杂度为O(log(m+n))
+    //4. 寻找两个有序数组的中位数,时间复杂度最小为O(log(m+n))
     static double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
     static double findMedianSortedArraysBest(vector<int>& nums1, vector<int>& nums2);
 };
