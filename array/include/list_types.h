@@ -9,6 +9,7 @@
 #include <vector>
 #include <iostream>
 
+using namespace std;
 /**
  * Definition for singly-linked list.
  */
@@ -19,7 +20,21 @@
  };
 class ListTypes {
 public:
+    //2. 两数相加
     static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+
+    //19. 删除链表的倒数第N个节点
+    static ListNode* removeNthFromEnd(ListNode* head, int n);
+
+    //21. 合并两个有序链表
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
+
+    //23. 合并K个排序链表
+    ListNode* mergeKLists(vector<ListNode*>& lists);
+    //23. 合并K个排序链表2
+    ListNode* mergeKLists2(vector<ListNode*>& lists);
+    ListNode* mergeLists(vector<ListNode*>& lists, int start, int end);
+
     //p节点后插入值为i的节点
     static void insertNode(ListNode *p, int i){
         ListNode* node = new ListNode(i);
