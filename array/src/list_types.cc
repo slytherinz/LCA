@@ -152,3 +152,33 @@ ListNode* ListTypes::mergeLists(vector<ListNode*>& lists, int start, int end) {
     ListNode* right = mergeLists(lists, mid+1, end);
     return mergeTwoLists(left, right);
 }
+
+/**
+ * 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+ * @param head
+ * @return
+ */
+ListNode* ListTypes::swapPairs(ListNode* head) {
+    if (head == NULL)
+        return NULL;
+    //加一个头节点
+    ListNode* newHead = new ListNode(0);
+    newHead->next = head;
+    ListNode* p = newHead;
+    ListNode* left = p->next;
+    ListNode* right = left->next;
+    while (right != NULL) {
+        ListNode* r = right->next;
+        p->next = right;
+        right->next = left;
+        left->next = r;
+        p = p->next->next;
+        if (r != NULL) {
+            left = r;
+            right = left->next;
+        } else {
+            right = NULL;
+        }
+    }
+    return newHead->next;
+}

@@ -31,9 +31,13 @@ public:
 
     //23. 合并K个排序链表
     ListNode* mergeKLists(vector<ListNode*>& lists);
-    //23. 合并K个排序链表2
+
+    //23. 合并K个排序链表2（递归）
     ListNode* mergeKLists2(vector<ListNode*>& lists);
     ListNode* mergeLists(vector<ListNode*>& lists, int start, int end);
+
+    //24. 两两交换链表中的节点
+    ListNode* swapPairs(ListNode* head);
 
     //p节点后插入值为i的节点
     static void insertNode(ListNode *p, int i){
