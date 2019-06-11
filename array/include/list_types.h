@@ -39,6 +39,9 @@ public:
     //24. 两两交换链表中的节点
     ListNode* swapPairs(ListNode* head);
 
+    //25. k个一组翻转链表
+    ListNode* reverseKGroup(ListNode* head, int k);
+
     //p节点后插入值为i的节点
     static void insertNode(ListNode *p, int i){
         ListNode* node = new ListNode(i);
