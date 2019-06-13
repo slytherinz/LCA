@@ -42,6 +42,12 @@ public:
     //25. k个一组翻转链表
     ListNode* reverseKGroup(ListNode* head, int k);
 
+    //61.旋转链表
+    ListNode* rotateRight(ListNode* head, int k);
+
+    //82.删除排序链表中的重复元素 II
+    ListNode* deleteDuplicates(ListNode* head);
+
     //p节点后插入值为i的节点
     static void insertNode(ListNode *p, int i){
         ListNode* node = new ListNode(i);

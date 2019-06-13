@@ -191,5 +191,87 @@ ListNode* ListTypes::swapPairs(ListNode* head) {
  * @return
  */
 ListNode* ListTypes::reverseKGroup(ListNode* head, int k) {
-    
+    if (head == NULL) {
+        return NULL;
+    }
+    //加一个头节点
+    ListNode* newHead = new ListNode(0);
+    newHead->next = head;
+    ListNode* p = head;
+    ListNode* q = p;
+    ListNode* newHead2 = newHead;
+    int step = 1;
+    bool end = false;
+    while (q != NULL) {
+        while(step < k) {
+            q = q->next;
+            if (q == NULL) {
+                end = true;
+                break;
+            }
+            step++;
+        }
+        if (q != NULL) {
+            ListNode* r = q->next;
+            //翻转p到q的部分
+            while (p->next != r) {
+                ListNode* first = newHead2->next;
+                ListNode* toPre = p->next;
+                ListNode* pTo = toPre->next;
+                toPre->next = first;
+                p->next = pTo;
+                newHead2->next = toPre;
+            }
+            newHead2 = p;
+            q = p->next;
+            p = q;
+            step = 1;
+        }
+    }
+    return newHead->next;
+}
+
+/**
+ * 给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。
+ * @param head
+ * @param k
+ * @return
+ */
+ListNode* ListTypes::rotateRight(ListNode* head, int k) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    //加一个头节点
+    ListNode* newHead = new ListNode(0);
+    newHead->next = head;
+    ListNode* numP = head;
+    int num = 0;
+    //先遍历一遍，算出长度
+    while (numP != NULL) {
+        numP = numP->next;
+        num++;
+    }
+    //实际插入的次数是总次数除长度取余数
+    int count = k % num;
+    while (count > 0) {
+        ListNode* p = newHead->next;
+        while (p->next->next != NULL) {
+            p = p->next;
+        }
+        ListNode* q = p->next;
+        q->next = newHead->next;
+        newHead->next = q;
+        p->next = NULL;
+        count--;
+    }
+    return newHead->next;
+}
+
+/**
+ * 给定一个排序链表，删除所有含有重复数字的节点，只保留原始链表中 没有重复出现 的数字。
+ * @param head
+ * @return
+ */
+ListNode* ListTypes::deleteDuplicates(ListNode* head) {
+
 }
