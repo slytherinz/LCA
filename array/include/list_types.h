@@ -42,11 +42,35 @@ public:
     //25. k个一组翻转链表
     ListNode* reverseKGroup(ListNode* head, int k);
 
-    //61.旋转链表
+    //61. 旋转链表
     ListNode* rotateRight(ListNode* head, int k);
 
-    //82.删除排序链表中的重复元素 II
+    //82. 删除排序链表中的重复元素 II
     ListNode* deleteDuplicates(ListNode* head);
+
+    //86. 分隔链表
+    ListNode* partition(ListNode* head, int x);
+
+    //92. 反转链表 II
+    ListNode* reverseBetween(ListNode* head, int m, int n);
+
+    //141. 环形链表
+    bool hasCycle(ListNode *head);
+
+    //142. 环形链表 II
+    ListNode* detectCycle(ListNode *head);
+
+    //143. 重排链表
+    void reorderList(ListNode* head);
+
+    //147. 对链表进行插入排序
+    ListNode* insertionSortList(ListNode* head);
+
+    //148. 排序链表
+    ListNode* sortList(ListNode* head);
+
+    //160. 相交链表
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
 
     //p节点后插入值为i的节点
     static void insertNode(ListNode *p, int i){

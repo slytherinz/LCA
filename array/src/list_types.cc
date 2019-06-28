@@ -1,6 +1,7 @@
 //
 // Created by cloudlz on 2019/2/3.
 //
+#include <stack>
 #include "list_types.h"
 
 /**
@@ -273,5 +274,321 @@ ListNode* ListTypes::rotateRight(ListNode* head, int k) {
  * @return
  */
 ListNode* ListTypes::deleteDuplicates(ListNode* head) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    //加一个头节点
+    ListNode* newHead = new ListNode(0);
+    newHead->next = head;
+    ListNode* prePoint = newHead;
+    ListNode* p = prePoint->next;
+    ListNode* q = p->next;
+    while (q != NULL) {
+        if (p->val == q->val) {
+            //注意q不为空的判断
+            while (q != NULL && p->val == q->val) {
+                q = q->next;
+            }
+            //删除重复的节点
+            prePoint->next = q;
+            p = q;
+            if (p != NULL) {
+                q = p->next;
+            } else {
+                q = NULL;
+            }
+        } else {
+            prePoint = prePoint->next;
+            p = p->next;
+            q = q->next;
+        }
+    }
+    return newHead->next;
+}
 
+/**
+ * 给定一个链表和一个特定值 x，对链表进行分隔，使得所有小于 x 的节点都在大于或等于 x 的节点之前。
+ * 你应当保留两个分区中每个节点的初始相对位置。
+ * @param head
+ * @param x
+ * @return
+ */
+ListNode* ListTypes::partition(ListNode* head, int x) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    //加一个头节点
+    ListNode* l1 = new ListNode(0);
+    l1->next = head;
+    //分成两个链表，再合并
+    ListNode* l2 = new ListNode(0);
+    ListNode* p = l1->next;
+    ListNode* q = l2;
+    //没指向l1，1->1 x=0有问题
+    ListNode* pre = l1;
+    while (p != NULL) {
+        if (p->val < x) {
+            pre = p;
+            p = p->next;
+        } else {
+//           （超时）
+//            q->next = p;
+//            pre->next = p->next;
+//            q = q->next;
+//            p = pre->next;
+              ListNode* add = new ListNode(p->val);
+              q->next = add;
+              q = add;
+              p = p->next;
+              pre->next = p;
+        }
+    }
+    pre->next = l2->next;
+    return l1->next;
+}
+
+/**
+ * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
+ * @param head
+ * @param m
+ * @param n
+ * @return
+ */
+ListNode* ListTypes::reverseBetween(ListNode* head, int m, int n) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    //加一个头节点
+    ListNode* l1 = new ListNode(0);
+    l1->next = head;
+    int step = n-m;
+    ListNode* pre = l1;
+    //先移动到m位置
+    int pos = m;
+    while (pos > 1) {
+        pre = pre->next;
+        pos--;
+    }
+    ListNode* p = pre->next;
+    ListNode* q = p->next;
+    //判断q不为空
+    if (q != NULL) {
+        ListNode* r = q->next;
+        while (step > 0) {
+            q->next = pre->next;
+            pre->next = q;
+            p->next = r;
+            step--;
+            if (step > 0) {
+                q = p->next;
+                r = q->next;
+            }
+        }
+    }
+    return l1->next;
+}
+
+/**
+ * 给定一个链表，判断链表中是否有环。
+ * 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。
+ * 如果 pos 是 -1，则在该链表中没有环。
+ * @param head
+ * @return
+ */
+bool ListTypes::hasCycle(ListNode *head) {
+    if (head == NULL) {
+        return false;
+    }
+    //如果是环两个不同step的指针肯定会遇到
+    bool isCycle = false;
+    ListNode* p = head;
+    ListNode* q = head->next;
+    while (p != NULL && q != NULL) {
+        if (p == q) {
+            isCycle = true;
+            break;
+        }
+        p = p->next;
+        q = q->next;
+        if (q != NULL) {
+            q = q->next;
+        }
+    }
+    return isCycle;
+}
+
+/**
+ * 给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
+ * 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。
+ * 如果 pos 是 -1，则在该链表中没有环。
+ * 说明：不允许修改给定的链表。
+ * @param head
+ * @return
+ */
+ListNode* ListTypes::detectCycle(ListNode *head) {
+    //超时
+    if (head == NULL) {
+        return head;
+    }
+    //如果是环两个不同step的指针肯定会遇到
+    bool isCycle = false;
+    ListNode* p = head;
+    ListNode* q = head;
+    while (p != NULL && q != NULL) {
+        p = p->next;
+        q = q->next;
+        if (q != NULL) {
+            q = q->next;
+        } else {
+            return NULL;
+        }
+        if (p == q) {
+            isCycle = true;
+            break;
+        }
+    }
+//    int len = 1;
+//    ListNode* res = head;
+//    if (isCycle == false) {
+//        return NULL;
+//    } else {
+//        q = q->next;
+//        while (p != q) {
+//            q = q->next;
+//            len++;
+//        }
+//    }
+//    //从头开始，如果是环的开始节点，循环len就会回到这个节点
+//    ListNode* r = res;
+//    for (int i = 0; i < len; i++) {
+//        r = r->next;
+//    }
+//    while (r->next != r) {
+//        res = res->next;
+//        r = res;
+//        for (int i = 0; i < len; i++) {
+//            r = r->next;
+//        }
+//    }
+//    return res;
+    //慢指针和从头开始的指针相遇的地方为头节点
+    if (isCycle) {
+        ListNode* res = head;
+        while (res != p) {
+            res = res->next;
+            p = p->next;
+        }
+        return res;
+    } else {
+        return NULL;
+    }
+}
+
+/**
+ * 给定一个单链表 L：L0→L1→…→Ln-1→Ln ，
+ * 将其重新排列后变为： L0→Ln→L1→Ln-1→L2→Ln-2→…
+ * @param head
+ */
+void ListTypes::reorderList(ListNode* head) {
+    if (head == NULL || head->next == NULL) {
+        return;
+    }
+    //从中间分两段，后半段反转后插入
+    ListNode* p = head;
+    ListNode* q = head->next;
+    while (q != NULL && q->next != NULL) {
+        p = p->next;
+        q = q->next->next;
+    }
+    //翻转
+    ListNode* head2 = p;
+    ListNode* m = p->next;
+    if (m->next != NULL) {
+        ListNode* n = m->next;
+        while (n != NULL) {
+            m->next = n->next;
+            n->next = head2->next;
+            head2->next = n;
+            n = m->next;
+        }
+    }
+    //依次插入
+    q = head;
+    m = head2->next;
+    //先拿到串2的头节点，再把串1尾节点置空，放在上两行有问题
+    p->next = NULL;
+    while (q != NULL) {
+        ListNode* r = q->next;
+        if (m != NULL) {
+            q->next = m;
+            m = m->next;
+            q->next->next = r;
+        }
+        q = r;
+    }
+}
+
+/**
+ * 插入排序
+ * @param head
+ * @return
+ */
+ListNode* ListTypes::insertionSortList(ListNode* head) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    //加一个头节点
+    ListNode* l1 = new ListNode(0);
+    l1->next = head;
+    ListNode* pre = l1;
+    ListNode* p = head;
+    ListNode* q = p->next;
+    while (p != NULL && q != NULL) {
+        bool insert = false;
+        pre = l1;
+        ListNode* move = l1->next;
+        while (move != p) {
+            if (q->val < move->val) {
+                p->next = q->next;
+                q->next = move;
+                pre->next = q;
+                q = p->next;
+                insert = true;
+                break;
+            } else {
+                move = move->next;
+                pre = pre->next;
+            }
+        }
+        if (!insert) {
+            //前面大于后面，插入
+            if (p->val > q->val) {
+                p->next = q->next;
+                q->next = p;
+                pre->next = q;
+                q = p->next;
+            } else {
+                p = p->next;
+                q = p->next;
+            }
+        }
+    }
+    return l1->next;
+}
+
+/**
+ * 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
+ * @param head
+ * @return
+ */
+ListNode* ListTypes::sortList(ListNode* head) {
+}
+
+/**
+ * 找到两个单链表相交的起始节点。
+ * @param headA
+ * @param headB
+ * @return
+ */
+ListNode* getIntersectionNode(ListNode* headA, ListNode* headB) {
 }
